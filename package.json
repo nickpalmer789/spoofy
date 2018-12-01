@@ -1,0 +1,10 @@
+{
+    "name": "Spoofy",
+    "version": "0.0.1",
+    "description": "Allows party goers to vote on the next song",
+    "dependencies": {
+        "express": "^4.16.4",
+        "install": "^0.12.2",
+        "npm": "^6.4.1"
+    }
+}
