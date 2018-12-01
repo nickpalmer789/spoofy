@@ -1,24 +1,77 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Socket.IO chat</title>
-    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script>
-        $(function() {
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="App_CSS.css" rel="stylesheet" />
+        <title>Spoofy Song Voting</title>
+    </head>
+    <body>    
+        <div class="wrapper2">
+            <div class="box title" id=boxTitle>Vote for a Song</div>
+            <input type="button" class="box w" onclick="SongAClick()"/>
+            <div class="box a" id ="abox"><center><p id="Song_A"></p></center></div>
+            <input type="button" class="box x" onclick="SongBClick()"/>
+            <div class="box b" id ="bbox"><center><p id="Song_B"></p></center></div>
+            <input type="button" class="box y" onclick="SongCClick()"/>
+            <div class="box c" id ="cbox"><center><p id="Song_C"></p></center></div>
+            <input type="button" class="box z" onclick="SongDClick()"/>
+            <div class="box d" id ="dbox"><center><p id="Song_D"></p></center></div>
+        </div>
+        <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript">
+            //Get the socket connection            
+            var socket = io.connect()
 
-            var socket = io();
-            $('.reset-voting').click(function() {
-                socket.emit('reset vote');
-            });
-        });        
-    </script>
-  </head>
-  <body>
-    <h1>Server Side</h1>
-    <ul id="messages"></ul>
-    <form action="">
-        <button class="reset-voting" type="button">Reset Voting!</button>
-    </form>
-  </body>
+            document.getElementById("Song_A").innerHTML = "Never Gonna Give You Up by Rick Astly";
+            document.getElementById("Song_B").innerHTML = "Gonna";
+            document.getElementById("Song_C").innerHTML = "Give";
+            document.getElementById("Song_D").innerHTML = "You";
+
+            function SongAClick(){
+                console.log("Song_A");
+                document.getElementById("abox").style.backgroundColor = "#0AFF1C"
+                document.getElementById("bbox").style.backgroundColor = "#444"
+                document.getElementById("cbox").style.backgroundColor = "#444"
+                document.getElementById("dbox").style.backgroundColor = "#444"
+            
+                //Emit a vote event
+                socket.emit('vote', 1);
+            };
+        
+            function SongBClick(){
+                console.log("Song_B");
+                document.getElementById("abox").style.backgroundColor = "#444"
+                document.getElementById("bbox").style.backgroundColor = "#0AFF1C"
+                document.getElementById("cbox").style.backgroundColor = "#444"
+                document.getElementById("dbox").style.backgroundColor = "#444"
+
+                //Emit a vote event
+                socket.emit('vote', 2);
+            };
+        
+            function SongCClick(){
+                console.log("Song_C");
+                document.getElementById("abox").style.backgroundColor = "#444"
+                document.getElementById("bbox").style.backgroundColor = "#444"
+                document.getElementById("cbox").style.backgroundColor = "#0AFF1C"
+                document.getElementById("dbox").style.backgroundColor = "#444"
+
+                //Emit a vote event
+                socket.emit('vote', 3);
+            };
+        
+            function SongDClick(){
+                console.log("Song_D");
+                document.getElementById("abox").style.backgroundColor = "#444"
+                document.getElementById("bbox").style.backgroundColor = "#444"
+                document.getElementById("cbox").style.backgroundColor = "#444"
+                document.getElementById("dbox").style.backgroundColor = "#0AFF1C"
+
+                //Emit a vote event
+                socket.emit('vote', 4);
+            };
+        
+        </script>
+
+    </body>
 </html>

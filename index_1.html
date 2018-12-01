@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        $(function() {
+
+            var socket = io();
+            $('.reset-voting').click(function() {
+                socket.emit('reset vote');
+            });
+        });        
+    </script>
+  </head>
+  <body>
+    <h1>Server Side</h1>
+    <ul id="messages"></ul>
+    <form action="">
+        <button class="reset-voting" type="button">Reset Voting!</button>
+    </form>
+  </body>
+</html>
