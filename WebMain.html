@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <link href="Web_CSS.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <script>
+            var Song_A = "Never Gonna Give You Up"
+        </script>
 
-<head>
-    <link href="Web_CSS.css" type="text/css" rel="stylesheet" />
-</head>
+        <div class="wrapper">
+            <div class="box Title" id=boxTitle><center>Spoofy</center></div>
+            <div class="box a">Room Code</div>
+            <div class="box b">X X X X X</div>
+            <div class="box c"><center>Next Four Songs</center></div>
+            <div class="box d"><p id="Song_A"></p></div> 
+            <div class="box e"><p id="Song_B"></p></div>
+            <div class="box f"><p id="Song_C"></p></div> 
+            <div class="box g"><p id="Song_D"></p></div> 
+        </div>
 
-<script>
-    var Song_A = "Never Gonna Give You Up"
-</script>
+        <script type="text/javascript">
+            function Button(){
+                console.log("Button");
+            };
 
-<div class="wrapper">
-    <div class="box Title" id=boxTitle><center>Spoofy</center></div>
-    <div class="box a">Room Code</div>
-    <div class="box b">X X X X X</div>
-    <div class="box c"><center>Next Four Songs</center></div>
-    <div class="box d"><p id="Song_A"></p></div> 
-    <div class="box e"><p id="Song_B"></p></div>
-    <div class="box f"><p id="Song_C"></p></div> 
-    <div class="box g"><p id="Song_D"></p></div> 
-</div>
-
-<script type="text/javascript">
-function Button(){
-    console.log("Button");
-};
-
-document.getElementById("Song_A").innerHTML = "Never";
-document.getElementById("Song_B").innerHTML = "Gonna";
-document.getElementById("Song_C").innerHTML = "Give";
-document.getElementById("Song_D").innerHTML = "You";
-
-</script>
-
-</body>
-
+            document.getElementById("Song_A").innerHTML = "Never";
+            document.getElementById("Song_B").innerHTML = "Gonna";
+            document.getElementById("Song_C").innerHTML = "Give";
+            document.getElementById("Song_D").innerHTML = "You";
+        </script>
+    </body>
 </html>
